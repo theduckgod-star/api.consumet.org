@@ -36,7 +36,7 @@ export const tmdbApi = process.env.TMDB_KEY && process.env.TMDB_KEY;
 
   await fastify.register(FastifyCors, {
     origin: '*',
-    methods: 'GET',
+    methods: 'GET' 'OPTIONS',
   });
 
   if (process.env.NODE_ENV === 'DEMO') {
