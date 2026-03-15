@@ -34,10 +34,10 @@ export const tmdbApi = process.env.TMDB_KEY && process.env.TMDB_KEY;
 (async () => {
   const PORT = Number(process.env.PORT) || 3000;
 
-  await fastify.register(FastifyCors, {
-    origin: '*',
-    methods: 'GET' 'OPTIONS',
-  });
+await fastify.register(FastifyCors, {
+  origin: '*',
+  methods: 'GET,OPTIONS',
+});
 
   if (process.env.NODE_ENV === 'DEMO') {
     console.log(chalk.yellowBright('DEMO MODE ENABLED'));
